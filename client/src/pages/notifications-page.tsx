@@ -189,7 +189,7 @@ export function NotificationsPage() {
                   </div>
 
                   {!item.isRead ? (
-                    <div className="mt-2 h-2.5 w-2.5 rounded-full bg-zinc-900" />
+                    <div className="mt-2 h-2.5 w-2.5 rounded-full bg-zinc-900 dark:bg-zinc-100" />
                   ) : null}
                 </Link>
               );

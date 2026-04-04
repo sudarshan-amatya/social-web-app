@@ -16,7 +16,7 @@ const app = express()
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: process.env.CLIENT_URL || "https://social-web-app-five.vercel.app",
     credentials: true,
   })
 )
