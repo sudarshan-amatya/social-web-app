@@ -154,13 +154,16 @@ export async function login(req, res) {
 }
 
 export async function logout(_req, res) {
+  const isProduction = process.env.NODE_ENV === "production"
+
   res.clearCookie("token", {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-  });
+    secure: isProduction,
+    sameSite: isProduction ? "none" : "lax",
+    path: "/",
+  })
 
-  return res.json({ message: "Logged out successfully" });
+  return res.json({ message: "Logged out successfully" })
 }
 
 export async function getMe(req, res) {
