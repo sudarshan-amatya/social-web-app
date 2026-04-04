@@ -1,6 +1,6 @@
 import axios from "axios"
 
 export const api = axios.create({
-  baseURL: "https://social-web-app-3.onrender.com/api",
+  baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true,
 })
